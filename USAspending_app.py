@@ -41,7 +41,7 @@ Select_state = st.selectbox('Select state',['Alabama','Arizona','Arkansas','Cali
                              
 #############load needed data#######################
 ###get supplementary data
-State_Latitude_Longitude = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/State_Latitude_Longitude.csv")
+State_Latitude_Longitude = pd.read_csv("State_Latitude_Longitude.csv")
 
 FIPS_code_state = pd.read_csv("FIPS_code_state.csv")
 FIPS_code_state["FIPS"] = FIPS_code_state["FIPS"].apply(lambda x:str(x).zfill(2))             
@@ -49,205 +49,205 @@ FIPS_code_state["FIPS"] = FIPS_code_state["FIPS"].apply(lambda x:str(x).zfill(2)
 ###get the grants data
 def get_grants_dataset(Select_state):
     if Select_state == "New York":
-        grants_data = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_NY.csv")
+        grants_data = pd.read_csv("grants_data/county_grants_NY.csv")
     elif Select_state == "Indiana":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_Indiana.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_Indiana.csv")
     elif Select_state == "Tennessee":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_TN.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_TN.csv")
     elif Select_state == "Alabama":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_Alabama.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_Alabama.csv")
     elif Select_state == "Washington":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_Washington.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_Washington.csv")
     elif Select_state == "California":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_CA.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_CA.csv")
     elif Select_state == "Pennsylvania":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_PA.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_PA.csv")
     elif Select_state == "Illinois":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_IL.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_IL.csv")
     elif Select_state == "Maryland":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_Maryland.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_Maryland.csv")
     elif Select_state == "Texas":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_TX.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_TX.csv")
     elif Select_state == "Georgia":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_GA.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_GA.csv")
     elif Select_state == "Michigan":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_MI.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_MI.csv")
     elif Select_state == "Minnesota":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_MN.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_MN.csv")
     elif Select_state == "Wyoming":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_WY.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_WY.csv")
     elif Select_state == "Mississippi":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_MS.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_MS.csv")
     elif Select_state == "Arizona":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_AZ.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_AZ.csv")
     elif Select_state == "Arkansas":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_AR.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_AR.csv")
     elif Select_state == "Colorado":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_CO.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_CO.csv")
     elif Select_state == "Connecticut":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_CT.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_CT.csv")
     elif Select_state == "Delaware":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_DE.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_DE.csv")
     elif Select_state == "Idaho":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_ID.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_ID.csv")
     elif Select_state == "Iowa":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_IA.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_IA.csv")
     elif Select_state == "Kansas":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_KS.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_KS.csv")
     elif Select_state == "Kentucky":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_KY.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_KY.csv")
     elif Select_state == "Louisiana":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_LA.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_LA.csv")
     elif Select_state == "Maine":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_ME.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_ME.csv")
     elif Select_state == "Massachusetts":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_MA.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_MA.csv")
     elif Select_state == "Missouri":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_MO.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_MO.csv")
     elif Select_state == "Montana":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_MT.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_MT.csv")
     elif Select_state == "Nebraska":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_NE.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_NE.csv")
     elif Select_state == "Nevada":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_NV.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_NV.csv")
     elif Select_state == "New Hampshire":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_NH.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_NH.csv")
     elif Select_state == "New Jersey":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_NJ.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_NJ.csv")
     elif Select_state == "New Mexico":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_NM.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_NM.csv")
     elif Select_state == "North Carolina":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_NC.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_NC.csv")
     elif Select_state == "North Dakota":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_ND.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_ND.csv")
     elif Select_state == "Ohio":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_OH.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_OH.csv")
     elif Select_state == "Oklahoma":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_OK.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_OK.csv")
     elif Select_state == "Oregon":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_OR.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_OR.csv")
     elif Select_state == "South Carolina":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_SC.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_SC.csv")
     elif Select_state == "South Dakota":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_SD.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_SD.csv")
     elif Select_state == "Utah":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_UT.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_UT.csv")
     elif Select_state == "Vermont":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_VT.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_VT.csv")
     elif Select_state == "Virginia":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_VA.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_VA.csv")
     elif Select_state == "West Virginia":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_WV.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_WV.csv")
     elif Select_state == "Wisconsin":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_WI.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_WI.csv")
     elif Select_state == "Hawaii":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_HI.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_HI.csv")
     elif Select_state == "Rhode Island":
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_RI.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_RI.csv")
     else:
-        grants_data  = pd.read_csv("C:/Users/little page/Desktop/final_USAspending/grants_data/county_grants_Florida.csv")
+        grants_data  = pd.read_csv("grants_data/county_grants_Florida.csv")
     return grants_data
         
 ###get the geojson data
 def get_geojson_dataset(Select_state):
     if Select_state == "New York":
-        geojson_data = json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_new_york_36.geojson","r"))
+        geojson_data = json.load(open("geojson_data/mergedfile_new_york_36.geojson","r"))
     elif Select_state == "Indiana":
-        geojson_data  = json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_indiana.geojson","r"))
+        geojson_data  = json.load(open("geojson_data/mergedfile_indiana.geojson","r"))
     elif Select_state == "Tennessee":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_TN.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_TN.geojson","r"))
     elif Select_state == "Alabama":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_AL.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile_AL.geojson","r")) 
     elif Select_state == "Washington":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_WA.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile_WA.geojson","r")) 
     elif Select_state == "California":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_California.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile_California.geojson","r")) 
     elif Select_state == "Pennsylvania":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_PA.geojson","r"))    
+        geojson_data  =json.load(open("geojson_data/mergedfile_PA.geojson","r"))    
     elif Select_state == "Illinois":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_IL.geojson","r"))  
+        geojson_data  =json.load(open("geojson_data/mergedfile_IL.geojson","r"))  
     elif Select_state == "Maryland":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile Maryland.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile Maryland.geojson","r")) 
     elif Select_state == "Texas":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_TX.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile_TX.geojson","r")) 
     elif Select_state == "Georgia":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_GA.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile_GA.geojson","r")) 
     elif Select_state == "Michigan":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_MI.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile_MI.geojson","r")) 
     elif Select_state == "Minnesota":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_MN.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile_MN.geojson","r")) 
     elif Select_state == "Wyoming":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_WY.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile_WY.geojson","r")) 
     elif Select_state == "Mississippi":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_MS.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile_MS.geojson","r")) 
     elif Select_state == "Arizona":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_AZ.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile_AZ.geojson","r")) 
     elif Select_state == "Arkansas":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_AR.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile_AR.geojson","r")) 
     elif Select_state == "Colorado":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_CO.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_CO.geojson","r"))
     elif Select_state == "Connecticut":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_CT.geojson","r"))   
+        geojson_data  =json.load(open("geojson_data/mergedfile_CT.geojson","r"))   
     elif Select_state == "Delaware":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_DE.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile_DE.geojson","r")) 
     elif Select_state == "Idaho":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_ID.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_ID.geojson","r"))
     elif Select_state == "Iowa":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_IA.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_IA.geojson","r"))
     elif Select_state == "Kansas":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_KS.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_KS.geojson","r"))
     elif Select_state == "Kentucky":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_KY.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_KY.geojson","r"))
     elif Select_state == "Louisiana":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_LA.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_LA.geojson","r"))
     elif Select_state == "Maine":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_ME.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile_ME.geojson","r")) 
     elif Select_state == "Massachusetts":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_MA.geojson","r"))  
+        geojson_data  =json.load(open("geojson_data/mergedfile_MA.geojson","r"))  
     elif Select_state == "Missouri":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_MO.geojson","r")) 
+        geojson_data  =json.load(open("geojson_data/mergedfile_MO.geojson","r")) 
     elif Select_state == "Montana":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_MT.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_MT.geojson","r"))
     elif Select_state == "Nebraska":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_NE.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_NE.geojson","r"))
     elif Select_state == "Nevada":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_NV.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_NV.geojson","r"))
     elif Select_state == "New Hampshire":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_NH.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_NH.geojson","r"))
     elif Select_state == "New Jersey":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_NJ.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_NJ.geojson","r"))
     elif Select_state == "New Mexico":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_NM.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_NM.geojson","r"))
     elif Select_state == "North Carolina":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_NC.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_NC.geojson","r"))
     elif Select_state == "North Dakota":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_ND.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_ND.geojson","r"))
     elif Select_state == "Ohio":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_OH.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_OH.geojson","r"))
     elif Select_state == "Oklahoma":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_OK.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_OK.geojson","r"))
     elif Select_state == "Oregon":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_OR.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_OR.geojson","r"))
     elif Select_state == "South Carolina":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_SC.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_SC.geojson","r"))
     elif Select_state == "South Dakota":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_SD.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_SD.geojson","r"))
     elif Select_state == "Utah":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_UT.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_UT.geojson","r"))
     elif Select_state == "Vermont":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_VT.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_VT.geojson","r"))
     elif Select_state == "Virginia":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_VA.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_VA.geojson","r"))
     elif Select_state == "West Virginia":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_WV.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_WV.geojson","r"))
     elif Select_state == "Wisconsin":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_WI.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_WI.geojson","r"))
     elif Select_state == "Hawaii":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_HI.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_HI.geojson","r"))
     elif Select_state == "Rhode Island":
-        geojson_data  =json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_RI.geojson","r"))
+        geojson_data  =json.load(open("geojson_data/mergedfile_RI.geojson","r"))
     else:
-        geojson_data  = json.load(open("C:/Users/little page/Desktop/final_USAspending/geojson_data/mergedfile_Florida.geojson","r"))  
+        geojson_data  = json.load(open("geojson_data/mergedfile_Florida.geojson","r"))  
     return geojson_data
 
 ###get the Latitude_Longitude of a state
