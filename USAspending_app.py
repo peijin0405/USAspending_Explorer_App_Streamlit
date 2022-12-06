@@ -11,6 +11,8 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
+
+
 #---------------------------------#
 # Page layout
 ## Page expands to full width
@@ -346,9 +348,10 @@ with columns[0]:
                          center = {"lat": lat ,"lon":lon},
                          zoom= 4.7,opacity = 0.3,
                          title="2022 Grant Funding of " + Select_state,
-                         width=700, height=500,
+                         width=700, height=500
                         )
-    st.plotly_chart(fig1)                                                       
+    st.plotly_chart(fig1)  
+    
 ##########################the third result visualization################                   
 ##form the url              
 
@@ -459,10 +462,51 @@ with columns[1]:
     st.plotly_chart(fig2)                               
                               
                               
+######################################## World Map #######################################  
+
+st.markdown('<p class="font">US Grants Spending Worldwide, FY 2022</p>', unsafe_allow_html=True)
+#############load needed data#######################
+merge6_withoutUSA = pd.read_csv("merge6_withoutUSA.csv")
+merge9 = pd.read_csv("merge9.csv")
+
+## Read in geojson
+all_country = json.load(open("all_country.geojson","r"))
+
+#---------------------------------#
+# Chart Layout
+merge6_withoutUSA_filtered = merge6_withoutUSA.filter(["Country Name","UN Region","Amount","Population","Population Date"])
+
+st.dataframe(data=merge6_withoutUSA_filtered)
 
 
 
-                              
+#################### sec viz#############
+columns = st.columns((1,1))
+
+with columns[0]:
+    fig3 = px.choropleth_mapbox(merge9,
+                        locations = "id",
+                        geojson = all_country,
+                        color="log_FY2022 Grants Amount",
+                       hover_name = "Country Name",
+                       hover_data = merge9.columns,
+                         mapbox_style = "carto-positron",
+                         zoom= 0.57,opacity = 0.3,
+                        center = {"lat": 23.8859,"lon":45.0792},
+                        title = "Distribution of USA Grants Spending around the world in FY2022",
+                        height=700, width=800)
+    #fig3.update_layout(height=500, width=700, margin={"r":0,"t":0,"l":0,"b":0})
+
+    st.plotly_chart(fig3) 
+
+with columns[1]:
+    fig4 = px.sunburst(merge6_withoutUSA,path=["UN Region","Country Name"],values = "Amount",hover_name = "Country Name", color = "log_Population", height = 700, title = "Distribution of US Grants Spending in FY2022")
+    st.plotly_chart(fig4) 
+
+    
+    
+
+
                               
                               
                               
