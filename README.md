@@ -1,6 +1,6 @@
 # USAspending Explorer App
 ## Streamlit Cloud Link:
-https://share.streamlit.io/peijin0405/usaspending_explorer_app_streamlit/main/USAspending_app.py
+https://peijin0405-usaspending-explorer-app-stre-usaspending-app-zl330y.streamlit.app/
 
 #### About 
 This app is designed to make federal spending data publicly available. It reveals the whole picture of government grant funding in a specific state. It shows the trend of federal spending data in a state in the course of 2012-2022 and it also serves as a tool to understand federal funding at the county level.
